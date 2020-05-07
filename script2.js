@@ -23,7 +23,7 @@ function roundedValue(value) {
 
 while (AmountLeft - TotalSetPrice > 0) {
   if (canIHaveIt) {
-    console.log(`You can't afford it!`);
+    console.log(`You can't spend more than your treshold!`);
     break;
   }
   TotalAmount++;
