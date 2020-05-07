@@ -7,7 +7,7 @@ let PhonePrice = Number(prompt("What is the price of the phone"));
 let AccessoryPrice = Number(prompt("What is the price of accessory"));
 let TotalAmount = 0;
 let TotalSetPrice = PhonePrice + AccessoryPrice;
-let amIBeggar = TotalSetPrice > SpendingTreshold;
+let canIHaveIt = TotalSetPrice > SpendingTreshold;
 
 function calculateTax(TotalSetPrice) {
   return TotalSetPrice * TaxRate;
@@ -22,7 +22,7 @@ function roundedValue(value) {
 }
 
 while (AmountLeft - TotalSetPrice > 0) {
-  if (amIBeggar) {
+  if (canIHaveIt) {
     console.log(`You can't afford it!`);
     break;
   }
@@ -30,7 +30,7 @@ while (AmountLeft - TotalSetPrice > 0) {
   updateAmountLeft();
 }
 
-if (!amIBeggar) {
+if (!canIHaveIt) {
   console.log(
     `Your total number of sets is ${TotalAmount}, worth $${roundedValue(
       BankBalance - AmountLeft
