@@ -1,31 +1,19 @@
 function foo() {
-  var a = 1;
-
-  if (a >= 1) {
-    let b = 2;
-
-    while (b < 5) {
-      let c = b * 2;
-      b++;
-
-      console.log(a + c);
-    }
-  }
+  console.log(this.bar);
 }
 
-foo();
+var bar = "global";
 
-function foo() {
-  var a = 1;
+var obj1 = {
+  bar: "obj1",
+  foo: foo,
+};
 
-  if (a >= 1) {
-    let b;
-
-    for (b = 2; b < 5; b++) {
-      let c = b * 2;
-      console.log(a + c);
-    }
-  }
-}
+var obj2 = {
+  bar: "obj2",
+};
 
 foo();
+obj1.foo();
+foo.call(obj2);
+new foo();
