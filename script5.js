@@ -4,7 +4,6 @@ function User() {
     function doLogin(user, pw) {
         username = user;
         password = pw;
-        // do the rest of the login work
     }
 
     var publicAPI = {
@@ -15,7 +14,6 @@ function User() {
 
 }
 
-// create a `User` module instance
 var fred = User();
 
 fred.login("fred", "12Battery34!");
